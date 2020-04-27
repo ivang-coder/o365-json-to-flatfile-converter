@@ -18,17 +18,25 @@ Microsoft updates O365 IPs and FQDNs quite frequently, https://docs.microsoft.co
 2. Confirm location paths are accessible
 ### User Variables
 \_\_VersionPath\_\_ - path where client ID and latest version number will be stored
+
 \_\_OutputPath\_\_ -  path where flatfiles will be stored
+
 \_\_Server\_\_ - local email server FQDN/IP. **No authentication is currently supported**
+
 \_\_Port\_\_ - email server port
+
 \_\_StartTls\_\_ - establish secure TLS connection
+
 \_\_EmailFrom\_\_ - email sender
+
 \_\_EmailTo\_\_ - email recepient(s)
+
 ## Flatfile name format
 *o365_endpoints_[ipv4|ipv6|url]\_[Common|Exchange|SharePoint|Skype]\_[tcp|udp]_[various ports].txt*
 ## The files and their function
 **/o365-json-to-flatfile-converter.py** - the main script
-**/o365_endpoints_clientid_latestversion.txt** - the file is created upon first run and contains version ID. Every run the version ID is compared with the online version ID as a part of initial check. If a new version is identified, the script downloads the JSON file and starts processing. To avoid overwhelming administrative mailbox, an email is generated only when a new version of JSON file has been identified and processed.
+
+**/o365_endpoints_clientid_latestversion.txt** - this file is created upon first run and contains version ID. Every run the version ID is compared with the online version ID as a part of initial check. If a new version is identified, the script downloads the JSON file and starts processing. To avoid overwhelming administrative mailbox, an email is generated only when a new version of JSON file has been identified and processed.
 ## License
 MIT License
 ## Author
